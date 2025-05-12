@@ -1,10 +1,35 @@
 /* Reversi Game Styles */
-.board {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}  
+.board-container {
   display: inline-block;
   border: 2px solid #333;
+  padding: 5px;
+  margin-left: 10%;
 }
-.board-row {
+.board-header,
+.board-body .board-row {
   display: flex;
+}
+.corner-empty {
+  width: 50px;
+  height: 50px;
+}
+.label-cell {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background: #ccc;
 }
 .board-cell {
   width: 50px;
@@ -13,6 +38,9 @@
   border: 1px solid #333;
   position: relative;
   cursor: pointer;
+}
+.board-cell.highlight {
+  background: yellow;
 }
 .piece {
   width: 40px;
@@ -31,13 +59,43 @@
 .game-info {
   margin-bottom: 10px;
 }
-.game-info p {
-  margin: 2px 0;
+.visible-info {
+  background: #222;
+  color: #fff;
+  padding: 10px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.reset-button,
+.toggle-button {
+  padding: 8px 12px;
+  font-size: 1rem;
+  background: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.reset-button:hover,
+.toggle-button:hover {
+  background: #e64a19;
 }
 .game-over {
   text-align: center;
 }
 .game-over button {
   margin-top: 10px;
-  padding: 5px 10px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  background: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.game-over button:hover {
+  background: #e64a19;
 }
