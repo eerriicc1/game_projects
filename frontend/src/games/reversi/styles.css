@@ -7,33 +7,63 @@ body {
 h1 {
   text-align: center;
   margin-top: 20px;
-}  
+}
+h2 {
+  text-align: center;
+  margin-top: 10px;
+}
+h3 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.board-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.moves-panel {
+  width: 20%;
+  max-width: 200px;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  padding: 10px;
+  max-height: 80vh;
+  overflow-y: auto;
+  font-size: 0.9rem;
+}
 .board-container {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  max-width: 600px;
+  aspect-ratio: 1;
   border: 2px solid #333;
-  padding: 5px;
-  margin-left: 10%;
+  margin-left: 0;
 }
 .board-header,
 .board-body .board-row {
   display: flex;
+  flex: 1;
+}
+.corner-empty,
+.label-cell,
+.board-cell {
+  flex: 1;
+  aspect-ratio: 1;
 }
 .corner-empty {
-  width: 50px;
-  height: 50px;
+  background: transparent;
 }
 .label-cell {
-  width: 50px;
-  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
   background: #ccc;
+  font-size: 1.2vw;
 }
 .board-cell {
-  width: 50px;
-  height: 50px;
   background: green;
   border: 1px solid #333;
   position: relative;
@@ -43,12 +73,12 @@ h1 {
   background: yellow;
 }
 .piece {
-  width: 40px;
-  height: 40px;
+  width: 70%;
+  height: 70%;
   border-radius: 50%;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 15%;
+  left: 15%;
 }
 .black {
   background: black;
@@ -71,8 +101,8 @@ h1 {
 }
 .reset-button,
 .toggle-button {
-  padding: 8px 12px;
-  font-size: 1rem;
+  padding: 10px 14px;
+  font-size: 1.1rem;
   background: #ff5722;
   color: white;
   border: none;
@@ -88,8 +118,8 @@ h1 {
 }
 .game-over button {
   margin-top: 10px;
-  padding: 8px 12px;
-  font-size: 1rem;
+  padding: 10px 14px;
+  font-size: 1.1rem;
   background: #ff5722;
   color: white;
   border: none;

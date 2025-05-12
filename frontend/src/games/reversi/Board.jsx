@@ -112,6 +112,7 @@ export default function Board() {
 
   const resetGame = () => {
     setBoard(initializeBoard());
+
     setCurrentPlayer(BLACK);
     setGameOver(false);
     setWinner(null);
@@ -150,7 +151,7 @@ export default function Board() {
         <div className="board-body">
           {board.map((rowArr, rowIdx) => (
             <div key={rowIdx} className="board-row">
-              <div className="label-cell">{BOARD_SIZE - rowIdx}</div>
+              <div className="label-cell">{rowIdx+1}</div>
               {rowArr.map((cell, colIdx) => {
                 const isValid = validMovesList.some(([r, c]) => r === rowIdx && c === colIdx);
                 return (
